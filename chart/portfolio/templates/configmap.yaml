@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
+  labels:
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: {{ .Chart.Name }}
+data:
+  stock_service: {{ .Release.Name }}-{{ .Values.stock.stock_service }}
+  stock_service_port: "{{ .Values.stock.stock_service_port }}"
+  stock_service_context: {{ .Values.stock.stock_service_context }}
+  watson_tone_analyzer: {{ .Values.watson.watson_tone_analyzer }}

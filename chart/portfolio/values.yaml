@@ -1,0 +1,49 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+revisionHistoryLimit: 1
+image:
+  repository: mycluster.icp:8500/default
+  name: portfolio
+  tag: latest
+  pullPolicy: Always
+  containerPort:
+    http: 9080
+    https: 9443
+  resources:
+    requests:
+      cpu: 200m
+      memory: 300Mi
+service:
+  # Change this to ClusterIP before releasing charts so microservices can only be reached through the ingress
+  type: NodePort
+  servicePort:
+    http: 9080
+    https: 9443
+secret:
+  db:
+    create: false
+    secret_name: stocktrader-db2
+    # db: STOCKTRD
+    db: U1RPQ0tUUkQ=
+    # host: st-db2-ibm-db2oltp-dev-db2
+    host: c3QtZGIyLWlibS1kYjJvbHRwLWRldi1kYjI=
+    # id: db2inst1
+    id: ZGIyaW5zdDE=
+    # port: 50000
+    port: NTAwMDA=
+    # pwd: stocktraderdb
+    pwd: c3RvY2t0cmFkZXJkYg==
+  jwt:
+    create: false
+    secret_name: stocktrader-jwt
+    # audience: stock-trader
+    audience: c3RvY2stdHJhZGVy
+    # issuer: http://stock-trader.ibm.com
+    issuer: aHR0cDovL3N0b2NrLXRyYWRlci5pYm0uY29t
+stock:
+  stock_service: stock-quote
+  stock_service_port: "9080"
+  stock_service_context: stock-quote
+watson:
+  watson_tone_analyzer: "https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2017-09-21&sentences=false"
