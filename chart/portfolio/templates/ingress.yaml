@@ -16,5 +16,5 @@ spec:
       paths:
       - path: /portfolio
         backend:
-          serviceName: {{ .Release.Name }}-{{ .Chart.Name }}
+          serviceName: portfolio-service
           servicePort: {{ .Values.service.servicePort.https }}
