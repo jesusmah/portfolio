@@ -21,6 +21,22 @@ service:
     http: 9080
     https: 9443
 secret:
+  mq:
+    create: false
+    secret_name: stocktrader-mq
+    # id: app
+    id: YXBw
+    pwd:
+    # host: st-mq-ibm-mq
+    host: c3QtbXEtaWJtLW1x
+    # port: 1414
+    port: MTQxNA==
+    # channel: DEV.APP.SVRCONN
+    channel: REVWLkFQUC5TVlJDT05O
+    # queue-manager: trader
+    queue_manager: dHJhZGVy
+    # queue: NotificationQ
+    queue: Tm90aWZpY2F0aW9uUQ==
   db:
     create: false
     secret_name: stocktrader-db2
@@ -41,6 +57,19 @@ secret:
     audience: c3RvY2stdHJhZGVy
     # issuer: http://stock-trader.ibm.com
     issuer: aHR0cDovL3N0b2NrLXRyYWRlci5pYm0uY29t
+  watson:
+    create: false
+    secret_name: stocktrader-watson
+    # url: https://gateway.watsonplatform.net/tone-analyzer/api
+    url: aHR0cHM6Ly9nYXRld2F5LndhdHNvbnBsYXRmb3JtLm5ldC90b25lLWFuYWx5emVyL2FwaQ==
+    # Get your credentials at https://console.bluemix.net/catalog/services/tone-analyzer
+    id:
+    pwd:
+  odm:
+    create: false
+    secret_name: stocktrader-odm
+    # url: http://st-odm-ibm-odm-dev:9060/DecisionService/rest/ICP_Trader_Dev_1/determineLoyalty
+    url: aHR0cDovL3N0LW9kbS1pYm0tb2RtLWRldjo5MDYwL0RlY2lzaW9uU2VydmljZS9yZXN0L0lDUF9UcmFkZXJfRGV2XzEvZGV0ZXJtaW5lTG95YWx0eQ==
 stock:
   stock_service: stock-quote
   stock_service_port: "9080"
