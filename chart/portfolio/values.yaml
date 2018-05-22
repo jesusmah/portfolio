@@ -5,7 +5,7 @@ revisionHistoryLimit: 1
 image:
   repository: mycluster.icp:8500/default
   name: portfolio
-  tag: latest
+  tag: classic
   pullPolicy: Always
   containerPort:
     http: 9080
@@ -16,7 +16,7 @@ image:
       memory: 300Mi
 service:
   # Change this to ClusterIP before releasing charts so microservices can only be reached through the ingress
-  type: NodePort
+  type: ClusterIP
   servicePort:
     http: 9080
     https: 9443
@@ -45,5 +45,3 @@ stock:
   stock_service: stock-quote
   stock_service_port: "9080"
   stock_service_context: stock-quote
-watson:
-  watson_tone_analyzer: "https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2017-09-21&sentences=false"
