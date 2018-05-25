@@ -60,8 +60,8 @@ secret:
   watson:
     create: false
     secret_name: stocktrader-watson
-    # url: https://gateway.watsonplatform.net/tone-analyzer/api
-    url: aHR0cHM6Ly9nYXRld2F5LndhdHNvbnBsYXRmb3JtLm5ldC90b25lLWFuYWx5emVyL2FwaQ==
+    # url: https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21&sentences=false
+    url: aHR0cHM6Ly9nYXRld2F5LndhdHNvbnBsYXRmb3JtLm5ldC90b25lLWFuYWx5emVyL2FwaS92My90b25lP3ZlcnNpb249MjAxNy0wOS0yMSZzZW50ZW5jZXM9ZmFsc2U=
     # Get your credentials at https://console.bluemix.net/catalog/services/tone-analyzer
     id:
     pwd:
@@ -75,4 +75,4 @@ stock:
   stock_service_port: "9080"
   stock_service_context: stock-quote
 watson:
-  watson_tone_analyzer: "https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2017-09-21&sentences=false"
+  watson_tone_analyzer: "https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21&sentences=false"
