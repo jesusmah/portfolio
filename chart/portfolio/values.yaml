@@ -3,7 +3,7 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: mycluster.icp:8500/default
+  repository: ibmstocktrader
   name: portfolio
   tag: latest
   pullPolicy: Always
@@ -70,9 +70,3 @@ secret:
     secret_name: stocktrader-odm
     # url: http://st-odm-ibm-odm-dev:9060/DecisionService/rest/ICP_Trader_Dev_1/determineLoyalty
     url: aHR0cDovL3N0LW9kbS1pYm0tb2RtLWRldjo5MDYwL0RlY2lzaW9uU2VydmljZS9yZXN0L0lDUF9UcmFkZXJfRGV2XzEvZGV0ZXJtaW5lTG95YWx0eQ==
-stock:
-  stock_service: stock-quote
-  stock_service_port: "9080"
-  stock_service_context: stock-quote
-watson:
-  watson_tone_analyzer: "https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21&sentences=false"
