@@ -35,21 +35,6 @@ spec:
         image: "{{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
-          - name: STOCK_SERVICE
-            valueFrom:
-              configMapKeyRef:
-                name: {{ .Release.Name }}-{{ .Chart.Name }}
-                key: stock_service
-          - name: STOCK_SERVICE_PORT
-            valueFrom:
-              configMapKeyRef:
-                name: {{ .Release.Name }}-{{ .Chart.Name }}
-                key: stock_service_port
-          - name: STOCK_SERVICE_CONTEXT
-            valueFrom:
-              configMapKeyRef:
-                name: {{ .Release.Name }}-{{ .Chart.Name }}
-                key: stock_service_context
           - name: MQ_ID
             valueFrom:
               secretKeyRef:
